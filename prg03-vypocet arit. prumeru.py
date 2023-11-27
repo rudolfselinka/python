@@ -1,6 +1,6 @@
 známky = [[3, 1], [3, 2], [3, 1], [10, 3], [4, 4]]
 celková_váha = 0
-vážený_součet = 0
+vážený_součet = 0 
 for váha, známka in známky:
     celková_váha += váha 
     vážený_součet += váha * známka  
