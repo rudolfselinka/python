@@ -1,5 +1,5 @@
-def max(a, b):
-    if a > b:
-        return a
-    else:
-        return b
+def funkce(jídlo = "špagety"):
+    print("Mám rád " + jídlo)
+funkce("knedlíky")
+funkce("guláš")
+funkce()
