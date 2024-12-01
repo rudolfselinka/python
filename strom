@@ -1,0 +1,47 @@
+class Strom:
+
+    class Ozdoba:
+    
+        def __init__(self, barva_ozdoby, nazev_ozdoby):
+            self.__barva = barva_ozdoby
+            self.__nazev = nazev_ozdoby
+        
+        def getID(self):
+            return self.__barva
+    
+        def getNick(self):
+            return self.__nazev
+
+        def __str__(self):
+            return f"{self.__barva} {self.__nazev}"
+
+    def __init__(self, name) -> None:
+        self.__name = name
+        self.__ozdobicky = []
+        
+    def getName(self):
+        return self.__name
+    
+    def addOzdoby(self, barva_ozdoby, nazev_ozdoby):
+        self.__ozdobicky.append(self.Ozdoba(barva_ozdoby, nazev_ozdoby)) # [1. člen (objekt), 2. člen, 3. člen]
+        
+    def removeOzdoba(self, nazev):
+        for o in self.__ozdobicky:
+            if o.getID() == nazev:
+                self.__ozdobicky.remove(o)
+        
+    def getOzdoby(self):
+        return self.__ozdobicky
+                
+    
+vs = Strom("Vanocnni Strom")
+
+vs.addOzdoby("hneda", "hvezda")
+vs.addOzdoby("zelena", "siska")
+vs.addOzdoby("oranzova", "koule")
+
+vs.removeOzdoba(2)
+
+print(vs.getName())
+for ozdoba in vs.getOzdoby():
+    print(ozdoba)
